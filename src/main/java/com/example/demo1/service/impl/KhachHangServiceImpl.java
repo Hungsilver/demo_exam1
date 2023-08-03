@@ -14,7 +14,6 @@ public class KhachHangServiceImpl implements KhachHangService {
     @Autowired
     private KhachHangRepository khRepo;
 
-
     @Override
     public List<KhachHang> getAll(Pageable pageable) {
         return khRepo.findAll(pageable).getContent();

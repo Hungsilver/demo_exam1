@@ -17,8 +17,8 @@ public class HangKhachHangServiceImpl implements HangKhachHangService {
     private HangKhachHangRepository hkhRepo;
 
     @Override
-    public Page<HangKhachHang> getAll(Pageable pageable) {
-        return hkhRepo.findAll(pageable);
+    public List<HangKhachHang> getAll(Pageable pageable) {
+        return hkhRepo.findAll(pageable).getContent();
     }
 
     @Override
