@@ -14,7 +14,6 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity
 public class SecurityConfig {
 
     @Bean
@@ -36,7 +35,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
 
                 .authorizeHttpRequests(author -> author
-                        .requestMatchers("/api/khachhang").authenticated()
+                        .requestMatchers("/api/khachhang").permitAll()
                         .anyRequest().permitAll()
                 )
                 .formLogin(Customizer.withDefaults());
